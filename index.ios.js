@@ -46,82 +46,11 @@ class AwesomeProject extends Component {
   render() {
     return (
         <View style={styles.container}>
-      <ScrollableTabView>
-        <HelloClass tabLabel="React" counter='1' />
-        <HelloClass tabLabel="Flow" counter='2'/>
-        <HelloClass tabLabel="Jest" counter='3'/>
-      </ScrollableTabView>
-        <NavigationBar 
-            title={'this is a test'}
-            height={44}
-            titleColor={'#fff'}
-            backgroundColor={'#149be0'}
-            leftButtonIcon={'ouip'}
-            leftButtonTitle={'back'}
-            leftButtonTitleColor={'#fff'}
-            onLeftButtonPress={() => {
-            }}
-            rightButtonIcon={'ouipouip'}
-            rightButtonTitle={'forward'}
-            rightButtonTitleColor={'#fff'}
-            onRightButtonPress={() => {
-            }}
-        />
-        <SegmentedView
-                style={stylesTab.SegmentedView}
-                titles={["First", "Second", "Third"]}
-                stretch
-                barColor={'yellow'}
-                underlayColor={'red'}
-                duration={400}
-                onTransitionStart={() => {
-                    }}
-                onPress={() => {
-                this.setState({
-                  selectedTab: 'blueTab',
-                });
-              }}
-            />
-        <TabBarIOS
-            style={stylesTab.TabBarIOS}
-            tintColor="white"
-            barTintColor="darkslateblue">
-            <TabBarIOS.Item
-              title="Blue_Tab"
-              icon={{uri: base64Icon, scale: 5}}
-              selected={this.state.selectedTab === 'blueTab'}
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'blueTab',
-                });
-              }}>
-              {this._renderContent('#414A8C', 'Blue_Tab')}
-            </TabBarIOS.Item>
-            <TabBarIOS.Item
-              systemIcon="history"
-              badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
-              selected={this.state.selectedTab === 'redTab'}
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'redTab',
-                  notifCount: this.state.notifCount + 1,
-                });
-              }}>
-              {this._renderContent('#783E33', 'Red Tab', this.state.notifCount)}
-            </TabBarIOS.Item>
-            <TabBarIOS.Item
-              systemIcon="favorites"
-              title="More"
-              selected={this.state.selectedTab === 'greenTab'}
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'greenTab',
-                  presses: this.state.presses + 1
-                });
-              }}>
-              {this._renderContent('#21551C', 'Green Tab', this.state.presses)}
-            </TabBarIOS.Item>
-          </TabBarIOS>
+          <ScrollableTabView>
+            <HelloClass tabLabel="React" counter='1' />
+            <HelloClass tabLabel="Flow" counter='2'/>
+            <HelloClass tabLabel="Jest" counter='3'/>
+          </ScrollableTabView>
           </View>
     );
   }
@@ -135,13 +64,13 @@ var HelloClass = React.createClass({
     return (
       <View style={styles.container}>
         <Text>{this.props.counter} </Text>
-        <View>
-        <ScrollableTabView>
-        <NestedClass tabLabel="First" counter='1' />
-        <NestedClass tabLabel="Sec" counter='2'/>
-        <NestedClass tabLabel="Third" counter='3'/>
-      </ScrollableTabView>
-      </View>
+            <View>
+                <ScrollableTabView>
+                    <NestedClass tabLabel="First" counter='1' />
+                    <NestedClass tabLabel="Sec" counter='2'/>
+                    <NestedClass tabLabel="Third" counter='3'/>
+                </ScrollableTabView>
+           </View>
       </View>
     );
   },
@@ -179,7 +108,7 @@ const myStyle = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 20,
   },
   instructions: {
     textAlign: 'center',
@@ -208,14 +137,14 @@ const styles = StyleSheet.create({
 
 var stylesTab = StyleSheet.create({
   SegmentedView: {
-      paddingTop: 75,
+      paddingTop: 175,
   },
     TabBarIOS: {
      //marginBottom: 400,
      flex: 2,
   },
   tabContent: {
-    paddingTop: 200, 
+    paddingTop: 300, 
     flex: 1,
     alignItems: 'center',
     height:300,
